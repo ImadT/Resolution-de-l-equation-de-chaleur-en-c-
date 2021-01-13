@@ -5,7 +5,7 @@
 
 
 namespace ensiie {
-  class MATERIAU{
+  class Materiau{
     private:
       double lambda_;
       double rho_;
@@ -13,7 +13,8 @@ namespace ensiie {
       //string materiau;
     
     public:
-      MATERIAU(double lambda, double rho, double c);
+      Materiau(double lambda, double rho, double c);
+      Materiau(const Materiau& m);
       double get_lambda();
       double get_rho();
       double get_c();
