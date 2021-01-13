@@ -41,6 +41,21 @@ namespace ensiie {
     return data_[c + get_nc() * l];
   }
 
+
+  Matrix& Matrix::operator=(const Matrix& m) {
+    if (this != &m) {
+      Matrix tmp = m;
+      double* d = tmp.data_;
+      tmp.data_ = data_;
+
+      data_ = d;
+      nl_ = m.get_nl();
+      nc_ = m.get_nc();
+    }
+    return *this;
+  }
+
+
   std::ostream& operator<<(std::ostream& st, const Matrix& m) {
     for (int i = 0; i < m.nl_; i++) {
       for (int j = 0; j < m.nc_; j++) {
